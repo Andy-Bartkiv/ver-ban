@@ -10,7 +10,7 @@ interface User {
 
 const Login: React.FC = () => {
 
-    const [user, setUser] = useState({name: '', pass: ''});
+    const [user, setUser] = useState<User>({name: '', pass: ''});
 
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
