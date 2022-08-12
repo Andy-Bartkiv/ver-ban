@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 interface Props {
@@ -6,12 +7,29 @@ interface Props {
 
 const Register: React.FC<Props> = () => {
 
+    const [user, setUser] = useState({name: '', pass: ''});
+
     const navigate = useNavigate();
+
+    const handleSubmit = () => {
+        navigate(('/app-store'))
+    }
 
     return (
         <div className="page">
             <h2>Registration Screen</h2>
-            <button onClick={() => navigate(('/app-store'))}>Submit</button>
+            <div>
+            <input type='text' placeholder='User name' 
+                    value={ user.name } 
+                    onChange= { e => setUser({...user, name: e.target.value})}
+                />
+                <input type='text' placeholder='Password'
+                    value={ user.pass } 
+                    onChange= { e => setUser({...user, pass: e.target.value})}
+                />
+            </div>
+            <div>{user.name + ': ' + user.pass}</div>
+            <button onClick={ handleSubmit }>Submit</button>
             <button onClick={() => navigate(('/'))}>Cancel</button>
         </div>
     )
