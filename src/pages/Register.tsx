@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAppDispatch } from '../store/hooks';
+import { login } from '../store/authSlice';
+import { register } from '../store/userSlice';
+import { useAppSelector } from '../store/hooks';
 
 interface Props {
     
@@ -7,19 +11,24 @@ interface Props {
 
 const Register: React.FC<Props> = () => {
 
+    const users = useAppSelector((state) => state.user.value);
+
     const [user, setUser] = useState({name: '', pass: ''});
 
     const navigate = useNavigate();
+    const dispatch = useAppDispatch();
 
     const handleSubmit = () => {
-        navigate(('/app-store'))
+        dispatch(register(user));
+        dispatch(login(user.name));
+        navigate('/app-store', {state: {registered: true}});
     }
 
     return (
         <div className="page">
             <h2>Registration Screen</h2>
-            <div>
-            <input type='text' placeholder='User name' 
+            <div className='custom-input'>
+                <input type='text' placeholder='User name' 
                     value={ user.name } 
                     onChange= { e => setUser({...user, name: e.target.value})}
                 />

@@ -8,8 +8,9 @@ import { useAppSelector } from '../store/hooks';
 const AppRouter: React.FC = () => {
 
   const isAuth = useAppSelector((state) => state.auth.value);
-  console.log(isAuth);
-  
+  const users = useAppSelector((state) => state.user.value);
+  console.log(isAuth, users);
+  console.count('router');
 
   return (
     <div className="App-body">

@@ -63,6 +63,14 @@ li {
   justify-content: space-evenly;
 }
 
+.custom-input {
+  display: flex;
+  gap: 1em;
+}
+
+.custom-input > input {
+  font-size: 1em;
+}
 /*                    HEADER & NAVBAR                   */
 .App-header {
   width: 100%;
@@ -72,53 +80,11 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
-/*                    DETAILS Page                     */
-.details{
-  padding: 4em;
-  width: 100%;
-  display: flex;
-  gap: 4em;
+.user-name {
+  position: absolute;
+  color: orange;
+  right: .5em; top: .5em;
 }
-
-.details-poster {
-  width: 30%;
-  border-radius: .5vw;
-}
-
-.details-poster img {
-  width: 100%;
-  height: auto;
-}
-
-.details-description {
-  width: 45%;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5em;
-}
-
-.year {
-  font-size: 1.5em;
-}
-
-.title {
-  font-size: 2em;
-  font-weight: 700;
-}
-
-.btn-watch {
-  cursor: pointer;
-  padding: .5em;
-  width: 25%;
-  border-radius: .25vw;
-  border: .25vw solid teal;
-  text-align: center;
-  font-weight: 700;
-  transition: 0.125s;
-}
-
-.btn-watch:hover { background-color: teal }
-
-.btn-watch:active { transform: scale(.95) }
