@@ -20,7 +20,7 @@ const AppStore: React.FC<Props> = () => {
         <div className="page">
             <button onClick={ handleLogout }>Log Out</button>
             <h2>App Store Screen</h2>
-            <h4>Congrats! You have successfully {(state.registered) ? 'register' : 'login' } to Ver-Ban </h4>
+            <h4>Congrats! You have successfully {(state.newUser) ? 'register' : 'login' } to Ver-Ban </h4>
             <div className="apps">{
                 [1,2,3,4,5].map(app => {
                     const text = `App ${app}`;

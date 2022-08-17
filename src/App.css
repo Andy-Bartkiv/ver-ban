@@ -70,6 +70,8 @@ li {
 
 .custom-input > input {
   font-size: 1em;
+  padding: .25em;
+  border-radius: .25em;
 }
 /*                    HEADER & NAVBAR                   */
 .App-header {

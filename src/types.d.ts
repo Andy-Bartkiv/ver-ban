@@ -4,5 +4,5 @@ interface User {
 };
 
 interface Reg {
-    registered: boolean
+    newUser: boolean
 };
